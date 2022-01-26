@@ -570,6 +570,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 14rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .min-h-screen {
   min-height: 100vh;
 }
@@ -612,6 +616,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-7\/12 {
   width: 58.333333%;
+}
+
+.w-14 {
+  width: 3.5rem;
 }
 
 .-translate-y-1\/2 {
@@ -776,6 +784,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(249 250 251 / var(--tw-text-opacity));
 }
 
+.text-blue-500 {
+  --tw-text-opacity: 1;
+  color: rgb(59 130 246 / var(--tw-text-opacity));
+}
+
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
@@ -828,6 +841,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .dark .dark\:text-gray-100 {
   --tw-text-opacity: 1;
   color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+.dark .dark\:text-indigo-800 {
+  --tw-text-opacity: 1;
+  color: rgb(55 48 163 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
