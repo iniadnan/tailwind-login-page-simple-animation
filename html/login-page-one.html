@@ -9,8 +9,122 @@
     <link rel="icon" href="../assets/images/iniadnan.png" type="image/gif" sizes="16x16">
     <title>Tailwind Login Page - One</title>
     <link rel="stylesheet" href="../styles/css/dist/tailwind.css">
+    <style>
+        #loading {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #171f30;
+            z-index: 5;
+            animation-name: loading-container;
+            animation-duration: 1s;
+            animation-delay: 4s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes loading-container {
+            from {
+                top: 0;
+            }
+            to {
+                top: -100%;
+            }
+        }
+        #loading-1 {
+            animation-name: loading-1;
+            animation-duration: 1s;
+            animation-delay: 0s;
+            animation-fill-mode: forwards;
+            z-index: 4;
+        }
+        @keyframes loading-1 {
+            from {
+                top: 0;
+            }
+            to {
+                top: -100%;
+            }
+        }
+        #loading-2 {
+            animation-name: loading-2;
+            animation-duration: 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+            z-index: 3;
+        }
+        @keyframes loading-2 {
+            from {
+                top: 0;
+            }
+            to {
+                top: -100%;
+            }
+        }
+        #loading-3 {
+            animation-name: loading-3;
+            animation-duration: 1s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+            z-index: 2;
+        }
+        @keyframes loading-3 {
+            from {
+                top: 0;
+            }
+            to {
+                top: -100%;
+            }
+        }
+        #loading-4 {
+            animation-name: loading-4;
+            animation-duration: 1s;
+            animation-delay: 3s;
+            animation-fill-mode: forwards;
+            z-index: 1;
+        }
+        @keyframes loading-4 {
+            from {
+                top: 0;
+            }
+            to {
+                top: -100%;
+            }
+        }
+        #main {
+            transform: translateY(-30px);
+            animation-name: main;
+            animation-duration: 2s;
+            animation-delay: 5s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes main {
+            from {
+                transform: translateY(-30px);
+            }
+            to {
+                transform: translateY(0px);
+            }
+        }
+        #header-image {
+            position: absolute;
+            bottom: -100%;
+            animation-name: header-image;
+            animation-duration: 1s;
+            animation-delay: 6s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes header-image {
+            from {
+                bottom: -100%;
+            }
+            to {
+                bottom: 0%;
+            }
+        }
+    </style>
 </head>
-<body class="min-h-screen realtive md:flex items-center justify-center bg-slate-100 dark:bg-gray-800 pt-10 md:pt-0">
+<body class="min-h-screen realtive md:flex items-center justify-center bg-slate-100 dark:bg-gray-900 pt-10 md:pt-0">
     <button type="button" class="hidden h-16 w-16 md:flex items-center justify-center absolute bottom-0 md:top-5 right-5 bg-slate-50 dark:bg-indigo-800 rounded-full text-yellow-500 dark:text-white overflow-hidden" onclick="toggleTheme()">
         <!-- SUN -->
         <svg class="w-6 h-6 md:w-7 md:h-7 absolute top-1/2 dark:-top-10 left-1/2 transform -translate-y-1/2 -translate-x-1/2"
@@ -25,15 +139,16 @@
             <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
         </svg>
     </button>
-    <main class="h-auto w-11/12 sm:w-8/12 md:w-7/12 lg:w-2/6 shadow-md mx-auto">
-        <header class="h-52 w-full relative bg-cover bg-center" style="background-image: url('../assets/images/header-one.jpg')">
+    <main id="main" class="h-auto w-11/12 sm:w-8/12 md:w-7/12 lg:w-2/6 mx-auto">
+        <header class="h-52 w-full relative">
+            <img id="header-image" class="h-full w-full object-cover" src="../assets/images/header-one.jpg" alt="Image">
         </header>
-        <form class="w-full py-8 px-5 bg-white dark:bg-gray-700" action="#" method="POST">
+        <form class="w-full py-8 px-5 bg-white dark:bg-gray-800 relative z-5" action="#" method="POST">
             <div class="mb-4">
-                <input class="w-full bg-slate-100 dark:bg-gray-800 py-3 px-5 outline-none text-base text-gray-800 dark:text-gray-100" type="text" placeholder="Username">
+                <input class="w-full bg-slate-100 dark:bg-gray-900 py-3 px-5 outline-none text-base text-gray-800 dark:text-gray-100" type="text" placeholder="Username">
             </div>
             <div class="mb-2">
-                <input class="w-full bg-slate-100 dark:bg-gray-800 py-3 px-5 outline-none text-base text-gray-800 dark:text-gray-100" type="password" placeholder="Passsword">
+                <input class="w-full bg-slate-100 dark:bg-gray-900 py-3 px-5 outline-none text-base text-gray-800 dark:text-gray-100" type="password" placeholder="Passsword">
             </div>
             <div class="flex items-center justify-between mb-6 pl-1">
                 <div class="flex items-center">
@@ -43,10 +158,10 @@
                 <p><a class="text-sm text-gray-500 dark:text-gray-100" href="./login-page-one.html">Forgot Password</a></p>
             </div>
             <div class="mb-8">
-                <button class="w-full py-3 bg-blue-500 dark:bg-indigo-800 font-medium text-lg text-gray-100" type="submit">Login</button>
+                <button class="w-full py-3 bg-blue-500 hover:bg-blue-600 dark:bg-indigo-800 hover:dark:bg-indigo-900 font-medium text-lg text-gray-100" type="submit">Login</button>
             </div>
-            <div class="h-0.5 w-full relative bg-slate-100 dark:bg-gray-800 mx-auto mb-8">
-                <p class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white dark:bg-gray-700 px-2 font-medium text-base text-gray-500 dark:text-gray-100">Login With</p>
+            <div class="h-0.5 w-full relative bg-slate-100 dark:bg-gray-500 mx-auto mb-8">
+                <p class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 bg-white dark:bg-gray-800 px-2 font-medium text-base text-gray-500 dark:text-gray-100">Login With</p>
             </div>
             <div class="flex items-center justify-center">
                 <a href="https://www.facebook.com/MazmSNSC/" class="h-10 w-10 flex items-center justify-center rounded-full bg-blue-500 dark:bg-indigo-800 text-gray-50">
@@ -67,6 +182,13 @@
             </div>
         </form>
     </main>
+    <!-- LOADING -->
+    <div id="loading">
+        <div id="loading-1" class="h-full w-full absolute bg-teal-900"></div>
+        <div id="loading-2" class="h-full w-full absolute bg-sky-900"></div>
+        <div id="loading-3" class="h-full w-full absolute bg-rose-900"></div>
+        <div id="loading-4" class="h-full w-full absolute bg-violet-900"></div>
+    </div>
     <script src="../styles/js/login-page.js"></script>
 </body>
 </html>
