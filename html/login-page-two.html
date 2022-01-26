@@ -24,7 +24,7 @@
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 6;
         background-color: #171f30;
         animation-name: loading-container;
         animation-duration: 1s;
@@ -188,10 +188,25 @@
           left: 0%;
         }
       }
+      #just-mobile {
+        animation-name: just-mobile;
+        left: -100%;
+        animation-duration: 2s;
+        animation-delay: 5s;
+        animation-fill-mode: forwards;
+      }
+      @keyframes just-mobile {
+        from {
+          left: -100%;
+        }
+        to {
+          left: 0%;
+        }
+      }
     </style>
   </head>
   <body
-    class="min-h-screen realtive md:flex items-center justify-center bg-slate-100 dark:bg-gray-900 pt-10 md:pt-0 overflow-hidden"
+    class="min-h-screen realtive flex items-center justify-center bg-slate-100 dark:bg-gray-900 pt-10 md:pt-0 overflow-hidden"
   >
     <button
       type="button"
@@ -223,11 +238,18 @@
         />
       </svg>
     </button>
+    <!-- JUST MOBILE -->
+    <img
+      id="just-mobile"
+      class="block md:hidden min-h-screen w-10/12 fixed top-0 object-cover"
+      src="../assets/images/header-two.jpg"
+      alt="Image"
+    />
     <main
       id="main-container"
-      class="w-11/12 sm:w-8/12 md:w-7/12 lg:w-3/6 flex flex-wrap mx-auto"
+      class="w-11/12 sm:w-8/12 md:w-7/12 lg:w-3/6 flex flex-wrap mx-auto relative z-5"
     >
-      <header class="w-5/12 bg-transparent relative">
+      <header class="hidden md:block md:w-5/12 bg-transparent relative">
         <img
           class="h-full w-full object-cover absolute left-full"
           src="../assets/images/header-two.jpg"
@@ -235,7 +257,7 @@
         />
       </header>
       <form
-        class="w-7/12 py-8 px-5 bg-white dark:bg-gray-800 relative z-1"
+        class="w-full md:w-7/12 py-8 px-5 bg-white dark:bg-gray-800 relative z-1"
         action="#"
         method="POST"
       >

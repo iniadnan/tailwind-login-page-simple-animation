@@ -468,6 +468,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-sepia:  ;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -504,6 +508,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 100%;
 }
 
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -528,6 +540,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.block {
+  display: block;
 }
 
 .flex {
@@ -600,6 +616,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .w-7\/12 {
   width: 58.333333%;
+}
+
+.w-1\/2 {
+  width: 50%;
+}
+
+.w-9\/12 {
+  width: 75%;
+}
+
+.w-10\/12 {
+  width: 83.333333%;
 }
 
 .-translate-y-1\/2 {
@@ -868,8 +896,16 @@ Ensure the default browser behavior of the `hidden` attribute.
     top: 1.25rem;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:flex {
     display: flex;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:h-7 {
@@ -882,6 +918,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:w-7\/12 {
     width: 58.333333%;
+  }
+
+  .md\:w-5\/12 {
+    width: 41.666667%;
   }
 
   .md\:pt-0 {
